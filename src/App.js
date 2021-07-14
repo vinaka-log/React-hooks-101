@@ -1,24 +1,39 @@
-import React, {useState} from 'react';
+import React, {useEffect,useState} from 'react';
 
 
 const App = (props) => {
   const [state,setState] = useState(props)
-  // const [name, setName] = useState(props.name)
-  // const [price, setPrice] = useState(props.price)
+
   const {name, price} = state
 
-  // const reset = () => {
-  //   // setPrice(props.price)
-    // setName(props.name)
+  // DOMがレンダリングの後で実行される
+  useEffect(() => {
+    console.log("useEffecr is invoked.")
+  })
+
+  // 空の配列を第二引数で渡すと、
+  useEffect(() => {
+    console.log("useEffecr is invoked.(first time)")
+  },[])
+  
+  // 特定のパラメータの描画時と変更時に実行された時の書き方
+  useEffect(() => {
+    console.log("This callback is for name only.")
+  },[name])
+  
+
+  const renderPeriod =() => {
+    console.log("renderPeriod renders period.")
+    return '。';
+  }
 
   return (
     <>
-      <p>現在の{name}は、{price}円です。</p>
+      <p>現在の{name}は、{price}円です。 </p>
       <button onClick = {() => setState({...state, price : price + 1})}>+1 </button>
       <button onClick = {() => setState({...state, price: price - 1})}>-1 </button>
       <button onClick ={() => setState(props)}>Reset </button>
       <input value={name}　onChange = {e => setState({...state, name : e.target.value})}/>
-      <button onClick = {() => setState(props.name)}>Reset </button>
     </>
     )
   }
