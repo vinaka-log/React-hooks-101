@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import reducer from '../reducers'
 
+
+//  1回目
 const App = () => {
 const[state,dispatch] = useReducer(reducer, [])
 const [title, setTitle] = useState('')
