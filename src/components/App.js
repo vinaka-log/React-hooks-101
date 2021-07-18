@@ -3,6 +3,7 @@ import React, {useReducer, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import reducer from '../reducers'
+import Event from './event'
 
 
 //  1回目
@@ -12,15 +13,16 @@ const [title, setTitle] = useState('')
 const [body, setBody] = useState('')
 const addEvent = (e) => {
   e.preventDefault()
-  // dispatch(action)
-  //    action = {
-  //      type: 'CREATE_EVENT',
-  //      title,
-  //     body
-  //    }
+  dispatch({
+    type: 'CREATE_EVENT',
+    title,
+    body
+  })
+
+  setTitle("");
+  setBody("");
 }
 
-console.log({state});
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
@@ -47,9 +49,25 @@ console.log({state});
             <th></th>
           </tr>
         </thead>
-        <thead>
-
-        </thead>
+        <tbody>
+          {/* {
+            state.map((event, index) => {
+              const id = event.id
+              const handleClickDeleteButton =() => {
+                dispatch({type: "DELETE_EVENT", id})
+              }
+              return (
+                <tr key={index}>
+                  <td>{id}</td>
+                  <td>{event.title}</td>
+                  <td>{event.body}</td>
+                  <td><button type = "button" className = "btn btn-danger" onClick={handleClickDeleteButton}>削除</button></td>
+                </tr>
+              )
+            })
+          } */}
+          { state.map((event, index) => (<Event event={event} dispatch={dispatch}/>)) }
+        </tbody>
 
       </table>
 
