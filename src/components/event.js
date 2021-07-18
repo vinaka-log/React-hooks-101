@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { DELETE_EVENT } from '../actions'
+
 const Event = ({ dispatch, event}) => {
     // {
 //     state.map((event, index) => {
@@ -7,7 +9,7 @@ const Event = ({ dispatch, event}) => {
     const handleClickDeleteButton =() => {
     const result = window.confirm(`(id=${id})を削除`)
     if (result)
-    dispatch({type: "DELETE_EVENT", id})
+    dispatch({type: DELETE_EVENT, id})
     }
     return (
     <tr>
