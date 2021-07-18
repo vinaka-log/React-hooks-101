@@ -1,11 +1,12 @@
 import React from 'react'
 
 const Event = ({ dispatch, event}) => {
-    
     // {
 //     state.map((event, index) => {
     const id = event.id
     const handleClickDeleteButton =() => {
+    const result = window.confirm(`(id=${id})を削除`)
+    if (result)
     dispatch({type: "DELETE_EVENT", id})
     }
     return (
