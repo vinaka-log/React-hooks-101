@@ -1,6 +1,5 @@
-import React from 'react'
 import  {createContext} from 'react'
 
-const AppContext = createContext()
+const AppContext = createContext("heoooooooo")
 
 export default AppContext
