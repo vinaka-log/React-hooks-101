@@ -12,15 +12,16 @@ const [title, setTitle] = useState('')
 const [body, setBody] = useState('')
 const addEvent = (e) => {
   e.preventDefault()
-  // dispatch(action)
-  //    action = {
-  //      type: 'CREATE_EVENT',
-  //      title,
-  //     body
-  //    }
+  dispatch({
+    type: 'CREATE_EVENT',
+    title,
+    body
+  })
+
+  setTitle("");
+  setBody("");
 }
 
-console.log({state});
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
