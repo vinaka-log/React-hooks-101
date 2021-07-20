@@ -10,7 +10,6 @@ const EventForm = () => {
 
   const addEvent = e => {
     e.preventDefault()
-
     dispatch({
      type:CREATE_EVENT,
      title,
