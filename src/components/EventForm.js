@@ -29,7 +29,7 @@ const EventForm = () => {
   const unCreatable = title === '' || body === ''
 
   return (
-    <div>
+    <>
       <h4>イベント作成フォーム</h4>
       <form>
         <div className="form-group">
@@ -45,7 +45,7 @@ const EventForm = () => {
         <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
         <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.length === 0}>全てのイベントを削除する</button>
       </form>
-    </div>
+    </>
   )
 }
 
