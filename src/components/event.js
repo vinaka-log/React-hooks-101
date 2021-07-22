@@ -21,9 +21,6 @@ const Event = ({ event}) => {
         <td>{event.body}</td>
         <td><button type = "button" className = "btn btn-danger" onClick={handleClickDeleteButton}>削除</button></td>
     </tr>
-    //       )
-    //     })
-    //   }
     )
 }
 
