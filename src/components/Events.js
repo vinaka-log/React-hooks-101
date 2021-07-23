@@ -6,7 +6,7 @@ import AppContext from '../contexts/AppContext'
 const Events = () => {
     const { state }  = useContext(AppContext)
   return (
-    <>
+    <div>
       <h4>イベント一覧</h4>
       <table className="table table-hover">
         <thead>
@@ -21,7 +21,7 @@ const Events = () => {
           { state.map((event, index) => (<Event key={index} event={event} />))}
         </tbody>
       </table>
-    </>
+    </div>
   )
 }
 
