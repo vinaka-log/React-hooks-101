@@ -5,8 +5,6 @@ import AppContext from '../contexts/AppContext'
 
 
 const Event = ({ event}) => {
-    // {
-//     state.map((event, index) => {
     const {dispatch} = useContext(AppContext)
     const id = event.id
     const handleClickDeleteButton =() => {
